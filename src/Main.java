@@ -11,43 +11,49 @@ public class Main {
             sum += paymentAmount[i];
         }
         System.out.println("Сумма трат за месяц составила " + sum + " рублей.");
+        System.out.println();
 
         System.out.println("Задача 2");
         int[] weeklyExpenses = {1000, 1200, 1450, 1500, 1700};
         int min = weeklyExpenses[0];
         int max = weeklyExpenses[0];
-        for (int expenses : weeklyExpenses){
-            if (expenses < min){
+        for (int expenses : weeklyExpenses) {
+            if (expenses < min) {
                 min = expenses;
             }
-            if (expenses > max){
+            if (expenses > max) {
                 max = expenses;
             }
         }
         System.out.println("Минимальная сумма трат за неделю составила " + min + " рублей.");
         System.out.println("Максимальная сумма трат за неделю составила " + max + " рублей.");
+        System.out.println();
 
         System.out.println("Задача 3");
         int[] monthlyExpenses = {7500, 9000, 11000, 12500, 14000};
         int sumM = 0;
-        for (int expensesM : monthlyExpenses){
+        for (int expensesM : monthlyExpenses) {
             sumM += expensesM;
         }
         int weeks = monthlyExpenses.length;
         double average = (double) sumM / weeks;
         System.out.printf("Средняя сумма трат за месяц составила %.2f рублей.%n", average);
+        System.out.println();
 
         System.out.println("Задача 4");
-        char[] reverseFullName = { 'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
-        for (int i = reverseFullName.length - 1; i >= 0; i--) {
-            System.out.print(reverseFullName[i]);
+        char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
+        int left = 0;
+        int right = reverseFullName.length - 1;
+        while (left < right) {
+            char temp = reverseFullName[left];
+            reverseFullName[left] = reverseFullName[right];
+            reverseFullName[right] = temp;
+            left++;
+            right--;
         }
-
-
-
-
-
-
-
+        for (char fullName : reverseFullName) {
+            System.out.print(fullName);
+        }
+        System.out.println();
     }
 }
